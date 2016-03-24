@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>task2-2</title>
+</head>
+<body>
+	<h3>污染城市列表</h3>
+	<ul id="airList"></ul>
+	<script type="text/javascript">
+		var airData=[
+		["北京", 90],
+		["上海", 50],
+		["福州", 10],
+		["广州", 50],
+		["成都", 90],
+		["西安", 100]
+		];
+		var i=0;
+		(function(){
+			for(i;i<airData.length;i++){
+				showValue(i);
+			}
+		})();
+		function showValue(i){
+			if(airData[i][1]>60){
+				var li = document.createElement("li");
+				document.getElementById('airList').appendChild(li);
+				li.innerHTML="<li>"+airData[i][0]+"的空气质量为："+airData[i][1]+"</li>";
+			}
+		}
+
+	</script>
+</body>
+</html>
